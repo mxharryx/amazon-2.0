@@ -1,43 +1,60 @@
-/* eslint-disable @next/next/no-img-element */
-import React from 'react';
+/* eslint-disable jsx-a11y/alt-text */
+import Image from 'next/image'
+import React from 'react'
+import { BsSearch } from "react-icons/bs"
+import {AiOutlineShoppingCart} from "react-icons/ai"
 
 const Header = () => {
     return (
-        <header className="bg-amazon_blue p-4 flex items-center justify-between">
-          {/* Logo */}
-          <img
-            className="w-24 object-contain cursor-pointer"
-            src="/amazon.png"
-            alt="Amazon Logo"
-          />
-    
-          {/* Search Bar */}
-          <input
-            type="text"
-            className="flex-grow px-2 py-1 rounded-l-md border border-gray-600 focus:outline-none"
-            placeholder="Search for products..."
-          />
-          <button className="p-2 bg-yellow-400 rounded-r-md">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-black"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {/* Search icon */}
-            </svg>
-          </button>
-    
-          {/* Navigation */}
-          <div className="flex items-center space-x-4 text-black">
-            <div className="cursor-pointer">Hello, Sign In</div>
-            <div className="cursor-pointer">Returns</div>
-            <div className="cursor-pointer">Orders</div>
-            <div className="cursor-pointer">Cart</div>
-          </div>
+        <header>
+            {/* Top Nav */}
+            <div className='flex items-center bg-amazon_blue p-1 flex-grow py-2'>
+                <div className='mt-2 mr-6 flex items-center flex-grow sm:flex-grow-0'>
+                    <Image
+                        src="https://links.papareact.com/f90"
+                        width={100}
+                        height={32}
+                        objectFit='contain'
+                        className='cursor-pointer'
+                    />
+                </div>
+
+                {/* Search */}
+                <div className='hidden sm:flex items-center h-10 rounded-md flex-grow  bg-yellow-400 hover:bg-yellow-500'>
+                    <input type='text' 
+                    className='p-2 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none'
+                    placeholder='Search for products, brands and more'/>
+                    <div className="h-12 p-4"> {/* Add a wrapping div */}
+                        <BsSearch /> {/* Apply classes to the icon */}
+                    </div>
+
+                </div>
+
+                {/* Right */}
+                <div className='text-white flex items-center text-xs space-x-6 mx-6'>
+
+                <div className='link'>
+                <p>Hello, User</p>
+                <p className='font-extrabold'>Account & Lists</p>
+                </div>
+                
+                <div className='link' >
+                <p>Returns</p>
+                <p className='font-extrabold'> & Orders</p>
+                </div>
+
+                <div className='relative link flex items-center' >
+                        <div className='relative h-12 w-12'>
+                            <AiOutlineShoppingCart className="h-10 w-10" /> 
+                            <span className='absolute top-0 right-0 md:right-0 h-4 w-4 bg-yellow-400 text-center text-xs rounded-full'>0</span>
+                        </div>
+                        <p className='hidden md:inline font-extrabold md:text-sm'> Cart </p>
+                    </div>
+                
+                </div>
+            </div>
         </header>
-      );
-};
+    )
+}
 
 export default Header;
