@@ -46,7 +46,7 @@ const Header = () => {
                 <div className='relative link flex items-center' >
                         <div className='relative h-12 w-12'>
                             <AiOutlineShoppingCart className="h-10 w-10" /> 
-                            <span className='absolute top-0 right-0 md:right-0 h-4 w-4 bg-yellow-400 text-center text-xs rounded-full'>0</span>
+                            <span className='absolute top-0 right-0 md:right-0 h-4 w-4 bg-yellow-400 text-center text-xs rounded-full text-black font-bold'>0</span>
                         </div>
                         <p className='hidden md:inline font-extrabold md:text-sm'> Cart </p>
                     </div>
