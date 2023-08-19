@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { BsSearch } from "react-icons/bs"
-import {AiOutlineShoppingCart} from "react-icons/ai"
+import {AiOutlineShoppingCart, AiOutlineMenu} from "react-icons/ai"
 
 const Header = () => {
     return (
@@ -52,6 +52,34 @@ const Header = () => {
                     </div>
                 
                 </div>
+            </div>
+
+            {/* Bottom Nav */}
+            <div className='flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white text-sm'>
+            <p className='link flex items-center'>
+            <AiOutlineMenu className='h-6 mr-1'/> All
+            </p>
+            <p className='link'>
+            Prime Video
+            </p>
+            <p className='link'>
+            Amazon Business
+            </p>
+            <p className='link'>
+            Today's Deals
+            </p>
+            <p className='link hidden lg:inline-flex'> Electronics
+            </p>
+            <p className='link hidden lg:inline-flex'> Food & Grocery
+            </p>
+            <p className='link hidden lg:inline-flex'> Prime 
+            </p>
+            <p className='link hidden lg:inline-flex'> Buy Again
+            </p>
+            <p className='link hidden lg:inline-flex'> Shoppers and Toolkit
+            </p>
+            <p className='link hidden lg:inline-flex'> Health and Personal Care
+            </p>
             </div>
         </header>
     )
