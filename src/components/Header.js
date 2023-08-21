@@ -1,9 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/alt-text */
-import Image from 'next/image'
-import React from 'react'
-import { BsSearch } from "react-icons/bs"
-import {AiOutlineShoppingCart, AiOutlineMenu} from "react-icons/ai"
+import Image from 'next/image';
+import React from 'react';
+import { BsSearch } from "react-icons/bs";
+import {AiOutlineShoppingCart, AiOutlineMenu} from "react-icons/ai";
+import { signIn } from 'next-auth/react';
+
 
 const Header = () => {
     return (
@@ -34,17 +36,17 @@ const Header = () => {
                 {/* Right */}
                 <div className='text-white flex items-center text-xs space-x-6 mx-6'>
 
-                <div className='link'>
-                <p>Hello, User</p>
-                <p className='font-extrabold'>Account & Lists</p>
+                <div onClick={signIn} className='cursor-pointer link'>
+                <p className='hover:underline'>Hello, User</p>
+                <p className='font-extrabold md:text-sm'>Account & Lists</p>
                 </div>
                 
-                <div className='link' >
+                <div className='cursor-pointer link' >
                 <p>Returns</p>
-                <p className='font-extrabold'> & Orders</p>
+                <p className='font-extrabold md:text-sm'> & Orders</p>
                 </div>
 
-                <div className='relative link flex items-center' >
+                <div className='relative link flex cursor-pointer items-center' >
                         <div className='relative h-12 w-12'>
                             <AiOutlineShoppingCart className="h-10 w-10" /> 
                             <span className='absolute top-0 right-0 md:right-0 h-4 w-4 bg-yellow-400 text-center text-xs rounded-full text-black font-bold'>0</span>

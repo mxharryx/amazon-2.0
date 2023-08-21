@@ -4,8 +4,11 @@ import FacebookProvider from 'next-auth/providers/facebook'
 import GoogleProvider from 'next-auth/providers/google'
 import GithubProvider from 'next-auth/providers/github'
 import EmailProvider from 'next-auth/providers/email'
+import { FirestoreAdapter } from "@auth/firebase-adapter";
+
 
 export default NextAuth({
+    adapter: FirestoreAdapter(),
   providers: [
     // OAuth authentication providers...
     AppleProvider({
