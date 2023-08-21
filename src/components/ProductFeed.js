@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-const ProductFeed = () => {
+function ProductFeed({ products }) {
   return (
     <div>
-    <h1>
-    Products here...
-    </h1>
+      <h1>Products here...</h1>
+      {products.map(({ id, title, price, description, category, image }) => (
+        <p key={id}>{title}</p>
+      ))}
     </div>
-  )
+  );
 }
 
 export default ProductFeed;
